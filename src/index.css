@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(56, 65, 88);
+  color: gold;
+}
+
+button {
+  margin: 5px;
+  padding: 5px;
+  font-size: large;
+  border-radius: 8px;
+}
+p,
+span {
+  color: white;
+  font-size: 1.3rem;
+}
+li {
+  color: white;
+}
+
+.p-map {
+  display: inline;
+  margin-right: 20px;
+}
+
+.error {
+  color: red;
+  background: rgb(240, 240, 240);
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.success {
+  color: green;
+  background: rgb(240, 240, 240);
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
