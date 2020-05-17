@@ -116,7 +116,7 @@ const App = () => {
       <h2>Phonebook</h2>
       <Notification message={errorMessage} />
       <Success success={successMessage} />
-      filter shown with name :{" "}
+      Filter shown with name :-{" "}
       <input value={filterName} onChange={handleFilter} />
       <hr />
       <h2>Add New Name</h2>
