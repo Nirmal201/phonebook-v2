@@ -58,11 +58,12 @@ const App = () => {
         axios
           .post(api, newPerson)
           .then((response) => {
+            console.log("came in catch block", response.data);
             setPersons(persons.concat(response.data));
             setNewName("");
             setPhoneNumber("");
           })
-          .catch((e) => console.log(e));
+          .catch((e) => console.log("came in catch block", e));
 
         setSuccessMessage(`Added - "${newPerson.name}"`);
         setTimeout(() => {
@@ -90,6 +91,7 @@ const App = () => {
   };
 
   const filtered = persons.filter((person) => {
+    console.log("my custom logging....", person.name);
     return person.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
