@@ -58,7 +58,6 @@ const App = () => {
         axios
           .post(api, newPerson)
           .then((response) => {
-            console.log("came in catch block", response.data);
             if (response.data.name) {
               setPersons(persons.concat(response.data));
               setSuccessMessage(`Added - "${newPerson.name}"`);
@@ -105,11 +104,13 @@ const App = () => {
     if (confirm === true) {
       axios
         .delete(`${api}/${person.id}`)
+        .then((t) => alert(t.status))
         .catch((e) =>
           setErrorMessage(
-            `Information of "${person.name}" has already been removed from server.`
+            `Information of "${person.name}" has already been removed from phonebook.`
           )
         );
+
       setTimeout(() => {
         setErrorMessage(null);
       }, 5000);
