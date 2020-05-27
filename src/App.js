@@ -101,6 +101,30 @@ const App = () => {
 
   const handleDelete = (person) => {
     const confirm = window.confirm(`Delete "${person.name}" ?`);
+    // if (confirm === true) {
+    //   axios
+    //     .delete(`${api}/${person.id}`)
+    //     .then((e) => {
+    //const api = "/api/persons";
+
+    // DELETE http://localhost:3001/api/persons/5e9fcc850519cd0017851915
+
+    //sab kuch yahan karna hai..App
+
+    //       setErrorMessage(
+    //         `Information of "${person.name}" has been removed from contact list.`
+    //       );
+    //       setTimeout(() => {
+    //         setErrorMessage(null);
+    //       }, 5000);
+    //       const newPerson = persons.filter((p) => p.id !== person.id);
+    //       setPersons(newPerson);
+    //     })
+    //     .catch((err) => {
+    //       console.log("my error on deletion failed, ", err);
+    //     });
+    // }
+
     if (confirm === true) {
       axios
         .delete(`${api}/${person.id}`)
