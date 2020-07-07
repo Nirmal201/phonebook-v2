@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Footer from "./components/Footer";
-import Notification from "./components/Notification";
-import Success from "./components/Success";
+import Form from "./components/Form";
+import FilterBox from "./components/FilterBox";
+import FilterList from "./components/FilterList";
 
 // const api = "http://localhost:3001/persons";
 const api = "/api/persons";
@@ -69,7 +70,7 @@ const App = () => {
               setErrorMessage(response.data);
               setTimeout(() => {
                 setErrorMessage(null);
-              }, 5000);
+              }, 6000);
             }
             setNewName("");
             setPhoneNumber("");
@@ -119,35 +120,26 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>Phonebook</h2>
-      <Notification message={errorMessage} />
-      <Success success={successMessage} />
-      Filter shown with name :-{" "}
-      <input value={filterName} onChange={handleFilter} />
-      <hr />
-      <h2>Add New Name</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input value={newName} onChange={handleInput} />
-          <br />
-          <br />
-          Phone number: <input value={phoneNumber} onChange={handlePhone} />
-        </div>
+    <div id="bg-img">
+      <div className="main-head">
+        <img className="icon" src={require("./icon/phone.svg")} alt="" />
+        <h2 className="">Phonebook Web App</h2>
+      </div>
+
+      <main>
+        <FilterBox filter={filterName} handleFilter={handleFilter} />
         <hr />
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
-      <h2>Numbers</h2>
-      {filtered.map((person) => (
-        <div key={person.id}>
-          <p className="p-map">
-            {person.name} - {person.number}
-          </p>
-          <button onClick={() => handleDelete(person)}>delete</button>
-        </div>
-      ))}
+        <Form
+          submit={handleSubmit}
+          name={newName}
+          changeName={handleInput}
+          number={phoneNumber}
+          changePhone={handlePhone}
+          message={errorMessage}
+          success={successMessage}
+        />
+        <FilterList filtered={filtered} handleDelete={handleDelete} />
+      </main>
       <Footer />
     </div>
   );

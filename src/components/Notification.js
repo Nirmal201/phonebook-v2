@@ -18,7 +18,7 @@ const Notification = ({ message }) => {
     return null;
   }
   console.log("culprit found", message);
-  return <div className="error">{message}</div>;
+  return <span className="error">{message}</span>;
 };
 
 export default Notification;
