@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: rgb(56, 65, 88);
   color: gold;
 }
@@ -50,4 +50,246 @@ li {
   position: absolute;
   bottom: 10px;
   left: 10px;
+} */
+
+/* NEW DESIGN */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.3;
+  font-size: 20px;
+  font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui,
+    BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+#root {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+#bg-img {
+  overflow: hidden;
+  transform-origin: 0;
+  background-image: url("./icon/cool-background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  height: 100vh;
+  padding-top: 30px;
+}
+.filter-box {
+  padding: 15px 0;
+}
+
+#filter {
+  width: max-content;
+  padding: 10px 30px;
+}
+.search {
+  position: relative;
+}
+.search:before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 165px;
+  top: 2px;
+  bottom: 0;
+  width: 20px;
+  background: url("./icon/search.svg") center / contain no-repeat;
+}
+#filter::before:focus {
+  transform: translateX(-10px);
+}
+input {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  margin-left: 10px;
+  outline: 0;
+  border: 1px solid black;
+}
+button {
+  padding: 5px;
+  font-size: 16px;
+  background-color: rgb(168, 178, 209);
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.main-head {
+  font-size: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-head h2 {
+  height: 60px;
+  margin-left: 15px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+}
+main {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.form {
+  padding: 65px 0;
+}
+.form form {
+  display: flex;
+  align-items: center;
+}
+.form form input {
+  margin-right: 10px;
+}
+hr {
+  border: 1px solid rgba(54, 54, 54, 0.144);
+}
+
+.filterList {
+  overflow: scroll;
+  height: 450px;
+  border: 1px solid slategray;
+  padding-left: 30px;
+  padding-top: 15px;
+  border-radius: 4px;
+}
+.error {
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+.success {
+  border: 1px solid #00de00;
+  color: green;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: lightgreen;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+#footer {
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  writing-mode: vertical-rl;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 62.5em) {
+}
+@media (max-width: 48em) {
+  #root {
+    position: relative;
+  }
+  main {
+    padding: 70px;
+  }
+  .main-head {
+    font-size: 20px;
+  }
+  .main-head h2 {
+    height: 40px;
+  }
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  #filter {
+    padding: 5px;
+    padding-left: 30px;
+  }
+  .form form {
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+  }
+  .form input {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .form button {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 30em) {
+  #root {
+    position: relative;
+  }
+  main {
+    padding: 20px;
+  }
+  .main-head {
+    font-size: 16px;
+  }
+  .main-head h2 {
+    height: 30px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .search:before {
+    left: 15px;
+    bottom: -25px;
+  }
+  #filter {
+    margin-left: 0;
+    width: 100%;
+  }
+  .form form {
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+  }
+  .form input {
+    margin-left: 0;
+  }
+  .form button {
+    margin-top: 10px;
+  }
+  #footer {
+    font-size: 12px;
+  }
 }
